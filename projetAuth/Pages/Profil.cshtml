@@ -1,0 +1,26 @@
+﻿@page
+@model ProjetAuth.Pages.ProfilModel
+@{
+    ViewData["Title"] = "Affiche le nom de l'utilisateur";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>@User.Identity?.Name</p>
+<p>Vous pouvez rajouter des informations sur votre compte</p>
+<p>@Model.CurrentUser.FirstName</p>
+<p>@Model.CurrentUser.LastName</p>
+
+@* <p>@Model.CurrentUser.FirstName</p> *@
+<form method="post" class="post">
+    <input name="firstname" value="@Model.CurrentUser.FirstName" />
+    <input name="lastname" value="@Model.CurrentUser.LastName" />
+    <input type="submit" value="Modifier" class="btn btn-primary" />
+    <div>
+        <input type="checkbox" id="admin" name="isadmin" />
+        <label for="admin">
+            souhaitez-vous devenir admin ?
+        </label>
+    </div>
+</form>
+
+
